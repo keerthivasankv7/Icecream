@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Delight</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top">
+     <h1>Ice Cream Delights🍦</h1>
+    </div>
+    <header>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <img src="images/bg.jpg" alt="Ice Cream Delight 1" class="carousel-item active">
+                <img src="images/delicious-ice-cream-studio.jpg" alt="Ice Cream Delight 2" class="carousel-item">
+                <img src="images/bg.jpg" alt="Ice Cream Delight 3" class="carousel-item">
+            </div>
+            <a class="carousel-control prev" onclick="prevSlide()">&#10094;</a>
+            <a class="carousel-control next" onclick="nextSlide()">&#10095;</a>
+        </div>
+        
+    </header>
+    <div class="text">
+        <h1>Ice Cream Delights</h1>
+        <p>Indulge in a world of flavors and creamy goodness!</p>
+    </div>
+    <section id="flavors">
+        <h2>Our Flavors</h2>
+        <div class="flavors-container">
+            <div class="flavor">
+                <img src="images/delicious-ice-cream-studio.jpg" alt="Classic Vanilla" height="200px">
+                <p>Classic Vanilla</p>
+            </div>
+            <div class="flavor">
+                <img src="images/delicious-ice-creams-arrangement (1).jpg" alt="Rich Chocolate" height="200px">
+                <p>Rich Chocolate</p>
+            </div>
+            <div class="flavor">
+                <img src="images/delicious-ice-creams-arrangement.jpg" alt="Strawberry Swirl" height="200px">
+                <p>Strawberry Swirl</p>
+            </div>
+            <div class="flavor">
+                <img src="images/pexels-goumbik-1352273.jpg" alt="Mint Chocolate Chip" height="200px">
+                <p>Mint Chocolate Chip</p>
+            </div>
+            <div class="flavor">
+                <img src="images/pexels-markusspiske-126790 (1).jpg" alt="Cookie Dough" height="200px">
+                <p>Cookie Dough</p>
+            </div>
+            <div class="flavor">
+                <img src="images/pexels-markusspiske-126790.jpg" alt="Salted Caramel" height="200px">
+                <p>Salted Caramel</p>
+            </div>
+            <div class="flavor">
+                <img src="images/pexels-mikebirdy-380954.jpg" alt="Mango Sorbet" height="200px">
+                <p>Mango Sorbet</p>
+            </div>
+            <div class="flavor">
+                <img src="images/pexels-myfoodie-2638026.jpg" alt="Pistachio Delight" height="200px">
+                <p>Pistachio Delight</p>
+            </div>
+            <div class="flavor">
+                <img src="images/pexels-myfoodie-2638026.jpg" alt="Lotus Biscoff" height="200px">
+                <p>Lotus Biscoff</p>
+            </div>
+        </div>
+    </section>
+    <section id="offers">
+        <h2>Special Offers</h2>
+        <ul>
+            <li><strong>Buy One, Get One Free:</strong> Every Tuesday!</li>
+            <li><strong>Family Pack:</strong> 20% off on a pack of 4 pints.</li>
+            <li><strong>Loyalty Program:</strong> Earn points with every purchase and get free ice cream!</li>
+        </ul>
+    </section>
+    <section id="why-us">
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li><strong>Natural Ingredients:</strong> We use only the finest, all-natural ingredients.</li>
+            <li><strong>Handcrafted:</strong> Each batch is handcrafted to perfection.</li>
+            <li><strong>Community Love:</strong> Proudly serving our local community with love and care.</li>
+        </ul>
+    </section>
+    <section id="visit-us">
+        <h2>Visit Us</h2>
+        <p><strong>Location:</strong> 123 Ice Cream Lane, Sweet City</p>
+        <p><strong>Hours:</strong> Mon-Sun, 10 AM - 10 PM</p>
+        <p><strong>Contact:</strong> (123) 456-7890</p>
+    </section>
+    <section id="follow-us">
+        <h2>Follow Us</h2>
+        <p>
+            <a href="#">Facebook: IceCreamDelight</a><br>
+            <a href="#">Instagram: @IceCreamDelight</a><br>
+            <a href="#">Twitter: @IceCreamDelight</a>
+        </p>
+    </section>
+    <section id="order-online">
+        <h2>Order Online</h2>
+        <p>Enjoy your favorite ice cream from the comfort of your home.</p>
+        <a href="#" class="order-btn">Order Now</a>
+    </section>
+    <footer>
+        <p>Get Ready to Savor the Flavor!</p>
+        <p>Visit us today and taste the difference!</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+    
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-item');
+            if (index >= slides.length) currentSlide = 0;
+            if (index < 0) currentSlide = slides.length - 1;
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+    
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+    
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+    
+        // Automatically change slides every 3 seconds
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlide);
+            setInterval(nextSlide, 3000); // 3000 milliseconds = 3 seconds
+        });
+    </script>
+    
+        

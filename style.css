@@ -60,7 +60,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: white;
     opacity: 0;
     transition: opacity 0.3s ease;
